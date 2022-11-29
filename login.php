@@ -6,7 +6,7 @@ session_start();
 require_once 'db.php';
 
 //запрашиваем данные из таблицы users
-$l = $db->query('SELECT * FROM user');
+$l = $db->query('SELECT * FROM users');
 $dalsh = 0;
 
 // Очистка сессии если пользователь нажал выйти

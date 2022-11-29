@@ -14,7 +14,7 @@ if (!$db) {
 }
 
 ?>
-<!-- Подключение бутстрапа -->
+<!-- Подключение бутстрапа 123 -->
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/bootstrap.min.js"></script>

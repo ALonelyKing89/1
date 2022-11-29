@@ -2,10 +2,6 @@
 //Подключаем сессию
 session_start();
 
-//Если пользователь не админ, его выкидывает на страницу обслуживания
-if ($_SESSION['adm'] != 1) {
-	header('Location:index.php');	
-}
 
 //Подключение БД
 require_once 'db.php';

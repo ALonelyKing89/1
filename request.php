@@ -34,7 +34,7 @@ if (!isset($_SESSION['login'])){
 <head>
 	<title>Заявка</title>
 </head>
-	<body style="background-color:#BBE2F5;">
+	<body>
 		<form method="POST">
 		<div class="container-fluid p-0">
 
@@ -43,7 +43,8 @@ if (!isset($_SESSION['login'])){
 
 			<div class="container py-5" id="main">
 				<!-- блок отвечающий за все содержимое за исключением шапки и подвала -->
-				<p class="h2 text-center mb-3"><b>Решение проблемы</b></p>
+				<div class="card">
+				<p class="h1 text-center my-4 fw-bold">Заявка</p>
 				<div class="card mx-auto my-auto col-md-10 col-sm-12 col-lg-7 border-0">
 				  <div class="card-body">
 				    <div class="form-group">
@@ -59,11 +60,11 @@ if (!isset($_SESSION['login'])){
 
 						    <div class="form-group">
 							    <label for="exampleFormControlSelect1">Категория</label>
-							    <select name='cabinet' type='int' class='form-control' id='exampleFormControlSelect1' required>
+							    <select name='category' type='int' class='form-control' id='id_category' required>
 								<?php 
-									$result_select = mysqli_query($db,"SELECT * FROM cabinet");
+									$result_select = mysqli_query($db,"SELECT * FROM category");
 		          					while($object = mysqli_fetch_object($result_select)){
-		  								echo "<option value='$object->id_cabinet'> $object->cabinet </option>";
+		  								echo "<option value='$object->id_category'> $object->name</option>";
 		  							}
 								?>
 								</select>
@@ -77,9 +78,9 @@ if (!isset($_SESSION['login'])){
         						<div class="row">
             						<span id="output"></span>
         						</div>
-    						</div>						    	
-
-					</div>
+    						</div>	
+    						<p>					    	
+		</div>
 
     <script>
     function handleFileSelect(evt) {
@@ -104,9 +105,6 @@ if (!isset($_SESSION['login'])){
     }
     document.getElementById('file').addEventListener('change', handleFileSelect, false);
     </script>
-
-
-
 					<button name="doGo" type="submit" class="btn btn-primary container border-0"><b>ОТПРАВИТЬ</b></button>
 
 				</div>

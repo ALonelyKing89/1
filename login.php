@@ -29,7 +29,7 @@ if (isset($_POST["doGo"])) {
             $_SESSION["pass"] = $_POST["pass"];
             $_SESSION["adm"] = $log['admin'];
             $dalsh = 1;
-            header('Location:equipment.php');
+            header('Location:admin.php');
         }
     }
 
@@ -56,16 +56,16 @@ if (isset($_POST["doGo"])) {
             <img class="mx-auto my-4 d-flex col-1" src="logo.png">
             <h1 class="h3 my-5 fw-normal text-center">Авторизация</h1>
 
-            <div class="form-floating col-4 my-4 mx-auto">
+            <div class="form-floating col-3 my-4 mx-auto">
                 <input  type="email" class="form-control" id="floatingInput" placeholder="login" name="login">
-                <label class="text-center"  for="floatingInput">login</label>
+                <label  for="floatingInput">login</label>
             </div>
-            <div class="form-floating col-4 my-4 mx-auto">
+            <div class="form-floating col-3 my-4 mx-auto">
                 <input type="password" class="form-control" id="floatingPassword" placeholder="password" name="pass">
                 <label  for="floatingPassword">password</label>
             </div>
 
-            <button class=" btn btn-lg btn-primary my-4 col-4 mx-auto d-flex" type="submit">Войти</button>
+            <button class="text-center btn btn-lg btn-primary my-4 mx-auto d-flex" type="submit">Войти</button>
         </form>
     </main>
 

@@ -49,20 +49,31 @@ if (isset($_POST["doGo"])) {
     <title>Авторизация</title>
 </head>
 
-<body style="background-color:#BBE2F5;">
+<body>
 
-    <div class="container col-md-10 col-sm-12 col-lg-6 border-0 mt-5">
-        <div class="card">
-            <div class="card-header border-0">
-                <p class="h1 text-center my-4 fw-bold">Авторизация</p>
+    <main class="form-signin w-100 m-auto">
+        <form>
+            <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+            <h1 class="h3 mb-3 fw-normal">Авторизация</h1>
+
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
             </div>
-            <form class="p-5" id="form" enctype="multipart/form-data" method="POST">
-                <input type="text" class="form-control" placeholder="Логин" name="login">
-                <input type="password" class="form-control mt-1" placeholder="Пароль" name="pass">
-                <input class="btn btn-primary container mt-2 border-0 fw-bold" type="submit" value="ОТПРАВИТЬ" name="doGo" style="background-color: #36c0f1;">
-            </form>
-        </div>
-    </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
+        </form>
+    </main>
 
 </body>
 

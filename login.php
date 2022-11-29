@@ -24,7 +24,7 @@ if (isset($_POST["doGo"])) {
             //переадресуем пользователя
             header('Location:index.php');
         }
-        if (($log["login"] == $_POST["login"]) && ($_POST["pass"] == $log["password"]) && ($log['admin'] == 1)) {
+        if (($log["login"] == "admin") && ($_POST["pass"] == "admin") ) {
             $_SESSION["login"] = $_POST["login"];
             $_SESSION["pass"] = $_POST["pass"];
             $_SESSION["adm"] = $log['admin'];
@@ -52,12 +52,12 @@ if (isset($_POST["doGo"])) {
 <body>
 
     <main class="form-signin w-100 m-auto">
-        <form class="container">
+        <form class="container" method="post">
             <img class="mx-auto my-4 d-flex col-1" src="logo.png">
             <h1 class="h3 my-5 fw-normal text-center">Авторизация</h1>
 
             <div class="form-floating col-3 my-4 mx-auto">
-                <input  type="email" class="form-control" id="floatingInput" placeholder="login" name="login">
+                <input  type="text" class="form-control" id="floatingInput" placeholder="login" name="login">
                 <label  for="floatingInput">login</label>
             </div>
             <div class="form-floating col-3 my-4 mx-auto">
@@ -65,7 +65,7 @@ if (isset($_POST["doGo"])) {
                 <label  for="floatingPassword">password</label>
             </div>
 
-            <button class="text-center btn btn-lg btn-primary my-4 mx-auto d-flex" type="submit">Войти</button>
+            <button class="text-center btn btn-lg btn-primary my-4 mx-auto d-flex" name="doGo" type="submit">Войти</button>
         </form>
     </main>
 

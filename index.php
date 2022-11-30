@@ -18,8 +18,6 @@ require_once 'db.php';
 //Вывод шапки
 include("template\header.php"); 
 ?>
-
-<div class="block"></div>
 <?
 $sth = $db->query("SELECT `status` FROM `problem`");
 foreach($sth as $log){
@@ -27,12 +25,20 @@ foreach($sth as $log){
     $i++;
   }  
 }
-echo 'заявок решено '.$i;
-?>  
-
-
+?>
+<div class="conteiner">
+  <center>
+    <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+      <div class="card-header">Заявок решено</div>
+      <div class="card-body">
+        <h2 class="card-title"><?echo $i;?></h5>
+      </div>
+    </div>
+  </center>
+</div>
 <?
 include("template\\footer.php");
+
 ?>
 
 </body>

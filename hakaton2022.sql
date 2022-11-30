@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 30 2022 г., 17:04
+-- Время создания: Ноя 30 2022 г., 19:12
 -- Версия сервера: 8.0.24
 -- Версия PHP: 7.4.27
 
@@ -29,14 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `category` (
   `id_category` int NOT NULL,
-  `name` varchar(200) NOT NULL
+  `name_category` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Дамп данных таблицы `category`
 --
 
-INSERT INTO `category` (`id_category`, `name`) VALUES
+INSERT INTO `category` (`id_category`, `name_category`) VALUES
 (1, 'Problem 1'),
 (2, 'Problem 2');
 
@@ -48,14 +48,14 @@ INSERT INTO `category` (`id_category`, `name`) VALUES
 
 CREATE TABLE `photo` (
   `id_photo` int NOT NULL,
-  `name` varchar(50) NOT NULL DEFAULT '0'
+  `name_photo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Дамп данных таблицы `photo`
 --
 
-INSERT INTO `photo` (`id_photo`, `name`) VALUES
+INSERT INTO `photo` (`id_photo`, `name_photo`) VALUES
 (1, 'asdfasfh');
 
 -- --------------------------------------------------------
@@ -66,8 +66,8 @@ INSERT INTO `photo` (`id_photo`, `name`) VALUES
 
 CREATE TABLE `problem` (
   `id_problem` int NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `text` text NOT NULL,
+  `name_problem` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `text_problem` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `id_category` int NOT NULL,
   `id_photo` int NOT NULL,
   `status` varchar(15) NOT NULL DEFAULT 'новая',
@@ -79,7 +79,7 @@ CREATE TABLE `problem` (
 -- Дамп данных таблицы `problem`
 --
 
-INSERT INTO `problem` (`id_problem`, `name`, `text`, `id_category`, `id_photo`, `status`, `time`, `id_user`) VALUES
+INSERT INTO `problem` (`id_problem`, `name_problem`, `text_problem`, `id_category`, `id_photo`, `status`, `time`, `id_user`) VALUES
 (1, 'asd', 'asd', 2, 1, 'новая', '2022-11-30 13:53:23', 7);
 
 -- --------------------------------------------------------
@@ -90,17 +90,17 @@ INSERT INTO `problem` (`id_problem`, `name`, `text`, `id_category`, `id_photo`, 
 
 CREATE TABLE `request` (
   `id_request` int NOT NULL,
-  `name` varchar(50) NOT NULL DEFAULT '0',
-  `description` varchar(50) NOT NULL DEFAULT '0',
+  `name_request` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0',
+  `description_request` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0',
   `id_category` int NOT NULL DEFAULT '0',
-  `photo` int NOT NULL DEFAULT '0'
+  `photo_request` int NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Дамп данных таблицы `request`
 --
 
-INSERT INTO `request` (`id_request`, `name`, `description`, `id_category`, `photo`) VALUES
+INSERT INTO `request` (`id_request`, `name_request`, `description_request`, `id_category`, `photo_request`) VALUES
 (1, 'asfaf', '0asfasf', 1, 1);
 
 -- --------------------------------------------------------
@@ -155,7 +155,7 @@ ALTER TABLE `problem`
 --
 ALTER TABLE `request`
   ADD PRIMARY KEY (`id_request`),
-  ADD KEY `FK_request_photo` (`photo`);
+  ADD KEY `FK_request_photo` (`photo_request`) USING BTREE;
 
 --
 -- Индексы таблицы `users`
@@ -213,7 +213,7 @@ ALTER TABLE `problem`
 -- Ограничения внешнего ключа таблицы `request`
 --
 ALTER TABLE `request`
-  ADD CONSTRAINT `FK_request_photo` FOREIGN KEY (`photo`) REFERENCES `photo` (`id_photo`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_request_photo` FOREIGN KEY (`photo_request`) REFERENCES `photo` (`id_photo`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

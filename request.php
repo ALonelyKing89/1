@@ -12,7 +12,7 @@ if (isset($_POST["doGo"])) {
 	$scategory = htmlspecialchars($_POST['category']);
 	//$sphoto = htmlspecialchars($_POST['photo']);
 
-	$sql ="INSERT INTO problem (`name_problem`, `text_problem`, `id_category`, `id_photo`) VALUES ('$sname', '$sdescription', '$scategory', '1')"; 
+	$sql ="INSERT INTO problem (`name_problem`, `text_problem`, `id_category`, `id_photo`, `time`, `id_user) VALUES ('$sname', '$sdescription', '$scategory', '1',`".date("Y-m-d H:i:s")."`,`".$_SESSION['idUser']."` )"; 
 
 	if ($db->query($sql) === TRUE) {
 		echo "<script>alert('Данные отправлены!');</script>";

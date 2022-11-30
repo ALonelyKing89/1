@@ -1,7 +1,8 @@
-    <div class="container fixed-bottom">
-      <footer class="py-3 my-4">
+<div class="container fixed-bottom">
+    <footer class="py-3 my-4">
         <p class="text-center text-muted">© 2022 Company, Inc</p>
-      </footer>
-    </div>
-  </body>
+    </footer>
+</div>
+</body>
+
 </html>

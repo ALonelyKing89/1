@@ -19,9 +19,20 @@ require_once 'db.php';
 include("template\header.php"); 
 ?>
 
+<?
+$sql='SELECT * FROM request';
+foreach ($conn->query($sql) as $row){
+  print $row['name']."\t";
+  print $row['id_category']."\t";
+  print $row['photo']."\n";
+}
 
 
-
+$select = $connection->query("SELECT * FROM request");
+if($db) {
+    echo 'select()'.$select;
+}
+?>
 <?
 include("template\\footer.php");
 

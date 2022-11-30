@@ -71,7 +71,7 @@ if (isset($_POST["doGo"])) {
     						<div class="container">
         						<div class="row">
             						<label>Загрузить фото:</label>
-            						<input type="file" id="file" name="file" aria-label="With textarea" />
+            						<input type="file" id="file" name="file" aria-label="With textarea"/>
         						</div>
         						<div class="row">
             						<span id="output"></span>
@@ -94,7 +94,7 @@ if (isset($_POST["doGo"])) {
             return function(e) {
                 // Render thumbnail.
                 var span = document.createElement('span');
-                span.innerHTML = ['<img class="thumb" title="', escape(theFile.name), '" src="', e.target.result, '" />'].join('');
+                span.innerHTML = ['<img class="thumb" title="', escape(theFile.name), '" src="', e.target.result, '" width="200" height="100"/>'].join('');
                 document.getElementById('output').insertBefore(span, null);
             };
         })(f);

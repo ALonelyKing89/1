@@ -16,15 +16,15 @@ require_once 'db.php';
 <body>
 <?
 //Вывод шапки
-require_once "template\header.php"; 
+include("template\header.php"); 
 ?>
 
 
 
 
 <?
-require_once "template\\footer.php";
+include("template\\footer.php");
 
 ?>
-  </body>
+</body>
 </html>

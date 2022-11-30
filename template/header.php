@@ -1,8 +1,7 @@
   <nav class="navbar sticky-top badge-light">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand" href="\">
         <img src="logo.png" alt="" width="40" >
-        гниды
       </a>
       <form class="d-flex" role="search">
       <?

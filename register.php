@@ -48,7 +48,6 @@ if (isset($_POST["doGo"])) {
 
     <main class="form-signin w-100 m-auto">
         <form class="container"  method="post">
-            <img class="mx-auto my-4 d-flex col-1" src="logo.png">
             <h1 class="h3 my-5 fw-normal text-center">Регистрация</h1>
 
             <div class="form-floating col-3 my-4 mx-auto">

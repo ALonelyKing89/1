@@ -10,9 +10,11 @@ if (isset($_POST["doGo"])) {
 	$sname = htmlspecialchars($_POST['name']);
 	$sdescription = htmlspecialchars($_POST['description']);
 	$scategory = htmlspecialchars($_POST['category']);
+	$date=date("Y-m-d H:i:s");
+	$idUser=$_SESSION['idUser'];
 	//$sphoto = htmlspecialchars($_POST['photo']);
 
-	$sql ="INSERT INTO problem (`name_problem`, `text_problem`, `id_category`, `id_photo`, `time`, `id_user) VALUES ('$sname', '$sdescription', '$scategory', '1',`".date("Y-m-d H:i:s")."`,`".$_SESSION['idUser']."` )"; 
+	$sql ="INSERT INTO `problem` (`name_problem`, `text_problem`, `id_category`, `id_photo`, `time`, `id_user`) VALUES ('".$sname."', '".$sdescription."', '".$scategory."', '1','".$date."','".$idUser."' )"; 
 
 	if ($db->query($sql) === TRUE) {
 		echo "<script>alert('Данные отправлены!');</script>";

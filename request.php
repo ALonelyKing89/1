@@ -14,17 +14,12 @@ require_once 'db.php';
 	<title>Document</title>
 </head>
 <body>
-<?
-//Вывод шапки
-require_once "template\header.php"; 
-?>
 
-<<<<<<< Updated upstream
+
 		<!-- ПОДКЛЮЧЕНИЕ ШАПКИ -->
       	<? include("template/header.php"); ?>
-=======
 <center><h1>Заявка</h1></center>
->>>>>>> Stashed changes
+
 
 		<form method="POST">
 		<div class="container-fluid p-0">
@@ -95,7 +90,7 @@ require_once "template\header.php";
 
 					</div>
 				</div>
-<<<<<<< Updated upstream
+
 			</div> 
 		</form>
 		<?
@@ -103,11 +98,10 @@ require_once "template\header.php";
 		?>
 		<!-- подключение стилей и BOOTSTRAP -->
 		<link rel="stylesheet" href="style/bootstrap.min.css">
-=======
+
 			</div>
 		</div> 
 			</form>
->>>>>>> Stashed changes
 
 
 <?

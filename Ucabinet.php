@@ -67,7 +67,7 @@ $list = $sth->fetchAll(PDO::FETCH_ASSOC);
 <?
 foreach ($l as $log){
                       echo 
-                      "<center>"."<table>"."<thead>"."<tr>"."<th>Название<th>"."<th>Описание<th>"."<th>IDN<th>"."<th>Фото<th>"."</tr>"."</thead>"."<tbody>"."<tr>"."<th>".$log["name"]."<th>"."<th>".$log["description"]."<th>"."<th>".$log["id_category"]."<th>"."<th>".$log["photo"]."<th>"."</tr>"."</tbody>"."</table>"."</center>";
+                      "<center>"."<table>"."<thead>"."<tr>"."<th>Название<th>"."<th>Описание<th>"."<th>IDN<th>"."<th>Фото<th>"."</tr>"."</thead>"."<tbody>"."<tr>"."<th>".$log["name_request"]."<th>"."<th>".$log["description_request"]."<th>"."<th>".$log["id_category"]."<th>"."<th>".$log["photo_request"]."<th>"."</tr>"."</tbody>"."</table>"."</center>";
                   };
 ?>
 

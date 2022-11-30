@@ -5,10 +5,8 @@ session_start();
 // Подключаемся к БД
 require_once 'db.php';
 //$prob = $db->query('SELECT * FROM probl');
-// Вывод шапки
-require_once "template\header.php";
+//Вывод шапки
+require_once "template\header.php"; 
+require_once "template\\footer.php";
 
-
-// Вывод подвала
-require_once "template\footer.php";
 ?>

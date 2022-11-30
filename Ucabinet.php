@@ -32,9 +32,8 @@ require_once "template\header.php";
 	<center>
 		<h1>Личный кабинет пользователя</h1>
 	</center>
-	<form method="post">
-	<center>
-		<button name="doCreate" class="btn btn-secondary mt-5 col-2" type="submit">Создать заявку</button>
+	<form class="text-center" method="post">
+		<button name="doCreate" class="btn btn-secondary mt-5" type="submit">Создать заявку</button>
 	</center>	
 	</form>
 		<center>

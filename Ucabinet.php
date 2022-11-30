@@ -5,7 +5,9 @@ session_start();
 // Подключаемся к БД
 require_once 'db.php';
 $l = $db->query('SELECT * FROM request INNER JOIN category ON request.id_category = category.id_category');
-
+if (!isset($_SESSION['login']) ) {
+	header('Location:index.php'); 
+}
 //$prob = $db->query('SELECT * FROM probl');
 if (isset($_POST["doCreate"])) {
             header('Location:request.php');

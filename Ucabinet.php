@@ -2,7 +2,7 @@
 // Подключаемся к СЕССИИ
 session_start();
 
-// Подключаемся к БД
+// Подключаемся к БД1
 require_once 'db.php';
 $l = $db->query('SELECT * FROM request');
 //$prob = $db->query('SELECT * FROM probl');

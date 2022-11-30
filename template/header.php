@@ -16,11 +16,11 @@
       <?
       if (isset($_SESSION["login"])) {
         echo '<a class="navbar-brand" href="\">
-        <img src="logo.png" alt="" width="40">
+        <img src="logo.png" alt="" width="30">
       </a>';
       } else {
         echo '<a class="navbar-brand">
-        <img src="logo.png" alt="" width="40">
+        <img src="logo.png" alt="" width="30">
       </a>';
       }
       ?>
@@ -30,7 +30,7 @@
           if ($_SESSION["adm"] == 1) {
             echo '<a href="Acabinet.php" class="btn btn-info text-white">Админка</a>';
           } else {
-            echo '<a href="Ucabinet.php" class="btn btn-info text-white">Личный кабинет</a>';
+            echo '<a href="Ucabinet.php" class="btn btn-info text-white">Профиль</a>';
           }
           echo '<a href="login.php" class="btn btn-danger">Выход</a>';
         } else {

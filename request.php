@@ -5,6 +5,21 @@ session_start();
 // Подключаемся к БД
 require_once 'db.php';
 //$prob = $db->query('SELECT * FROM probl');
+if (isset($_POST["doGo"])) {
+	//Передача содержимого полей для запроса
+	$sname = htmlspecialchars($_POST['name']);
+	$sdescription = htmlspecialchars($_POST['description']);
+	$scategory = htmlspecialchars($_POST['category']);
+	//$sphoto = htmlspecialchars($_POST['photo']);
+
+	$sql ="INSERT INTO request (`name_request`, `description_request`, `id_category`, `photo_request`) VALUES ('$sname', '$sdescription', '$scategory', '1')"; 
+
+	if ($db->query($sql) === TRUE) {
+		echo "<script>alert('Данные отправлены!');</script>";
+	} else {
+		echo "<script>alert('Ошибка отправки данных!');</script>";
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +60,7 @@ require_once 'db.php';
 								<?php 
 									$result_select = mysqli_query($db,"SELECT * FROM category");
 		          					while($object = mysqli_fetch_object($result_select)){
-		  								echo "<option value='$object->id_category'> $object->name</option>";
+		  								echo "<option value='$object->id_category'> $object->name_category</option>";
 		  							}
 								?>
 								</select>
@@ -86,7 +101,7 @@ require_once 'db.php';
     }
     document.getElementById('file').addEventListener('change', handleFileSelect, false);
     </script>
-					<button type="submit" class="btn btn-primary container border-0"><b>ОТПРАВИТЬ</b></button>
+					<button name="doGo" type="submit" class="btn btn-primary container border-0" style="background-color: #36c0f1;"><b>ОТПРАВИТЬ</b></button>
 
 					</div>
 				</div>

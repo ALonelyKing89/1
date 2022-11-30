@@ -21,8 +21,11 @@ include("template\header.php");
 
 <?
 
-$sth = $db->prepare("SELECT * FROM `hakaton2022`");
+$sth = $db->prepare("SELECT `status` FROM `problem`");
 
+foreach($sth as $log){
+  echo $log["status"];
+}
 ?>
 <?
 include("template\\footer.php");

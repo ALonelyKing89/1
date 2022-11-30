@@ -1,4 +1,4 @@
-<div class="container fixed-bottom">
+<div class="container mt-4 fixed-bottom ">
     <footer class="py-3 my-4">
         <p class="text-center text-muted">© 2022 Company, Inc</p>
     </footer>

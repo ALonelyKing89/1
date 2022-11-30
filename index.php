@@ -20,15 +20,13 @@ include("template\header.php");
 ?>
 
 <?
-$dbh = new PDO('mysql:dbname=hakaton2022;host=localhost', 'root', '');
-$sth = $dbh->prepare("SELECT `status` FROM `problem`");
-$sth->execute();
+$sth = $db->query("SELECT `status` FROM `problem`");
 foreach($sth as $log){
   if($log['status']!="новая") {
     $i++;
-  }
-  echo 'заявок решено '.$i;
+  }  
 }
+echo 'заявок решено '.$i;
 ?>
 <?
 include("template\\footer.php");

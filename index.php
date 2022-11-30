@@ -39,22 +39,25 @@ foreach($sth as $log){
 <?
 $l = $db->query('SELECT `time`,`name_problem`,`name_category`,`status`,`name_photo` FROM `problem` JOIN `category` ON `problem`.`id_category`=`category`.`id_category` JOIN `photo` ON `problem`.`id_photo`=`photo`.`id_photo` ORDER BY `id_problem` DESC LIMIT 4 ');
 foreach($l as $log){
-  echo '  <center>
-            <div class="card mb-3" style="max-width: 540px;">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://kartinkof.club/uploads/posts/2022-03/1648241964_6-kartinkof-club-p-billi-kherrington-mem-7.jpg" class="img-fluid rounded-start" alt="...">
+  echo '<center>
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://kartinkof.club/uploads/posts/2022-03/1648241964_6-kartinkof-club-p-billi-kherrington-mem-7.jpg" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-header">
+                  '.$log["name_category"].'
                 </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">'.$log["name_request"].'</h5>
-                    <p class="card-text">'.$log["description_request"].'</p>
-                    <p class="card-text"><small class="text-muted">'.$log["name_category"].'</small></p>
-                  </div>
+                <div class="card-body">
+                  <h5 class="card-title">'.$log["name_problem"].'</h5>
+                  <p class="card-text"></p>                  
+                  <p class="card-text"><small class="text-muted">'.$log["time"].'</small></p>    
                 </div>
               </div>
             </div>
-          </center>';
+          </div>
+</center>';
 }
 ?>
 

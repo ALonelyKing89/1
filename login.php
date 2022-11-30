@@ -17,10 +17,11 @@ session_unset();
 if (isset($_POST["doGo"])) {
     // Проверяем наличие пользователя с переданными данными
     foreach ($l as $log) {
-        if (($log["login"] == $_POST["login"]) && ($_POST["pass"] == $log["password"]) && ($log['admin'] != 1)) {
+        if (($log["login"] == $_POST["login"]) && ($_POST["pass"] == $log["password"])) {
             $_SESSION["login"] = $_POST["login"];
             $_SESSION["pass"] = $_POST["pass"];
             $dalsh = 1;
+            $_SESSION['adm'] = 0;
             //переадресуем пользователя
             header('Location:Ucabinet.php');
         }
@@ -29,6 +30,7 @@ if (isset($_POST["doGo"])) {
             $_SESSION["pass"] = $_POST["pass"];
             $_SESSION["adm"] = $log['admin'];
             $dalsh = 1;
+            $_SESSION['adm'] = 1;
             header('Location:Acabinet.php');
         }
     }

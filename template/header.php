@@ -12,7 +12,7 @@
   ?>
 
   <nav class="navbar sticky-top badge-light">
-    <div class="container">
+    <div class="container p-0">
       <a class="navbar-brand" href="\">
         <img src="logo.png" alt="" width="40">
       </a>

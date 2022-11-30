@@ -1,7 +1,7 @@
 <?php
 $server = 'localhost'; // Имя или адрес сервера
 $user = 'root'; // Имя пользователя БД
-$password = 'root'; // Пароль пользователя
+$password = ''; // Пароль пользователя
 $db = 'hakaton2022'; // Название БД
 
 $db = mysqli_connect($server, $user, $password, $db); // Подключение

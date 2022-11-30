@@ -4,7 +4,7 @@ session_start();
 
 // Подключаемся к БД
 require_once 'db.php';
-$l = $db->query('SELECT * FROM request INNER JOIN category ON request.id_category = category.id_category');
+$l = $db->query('SELECT * FROM problem INNER JOIN category ON problem.id_category = category.id_category');
 if (!isset($_SESSION['login']) ) {
 	header('Location:index.php'); 
 }
@@ -53,8 +53,8 @@ foreach($l as $log){
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">'.$log["name_request"].'</h5>
-        <p class="card-text">'.$log["description_request"].'</p>
+        <h5 class="card-title">'.$log["name_problem"].'</h5>
+        <p class="card-text">'.$log["text_problem"].'</p>
         <p class="card-text"><small class="text-muted">'.$log["name_category"].'</small></p>
       </div>
     </div>

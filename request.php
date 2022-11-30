@@ -12,7 +12,7 @@ if (isset($_POST["doGo"])) {
 	$scategory = htmlspecialchars($_POST['category']);
 	//$sphoto = htmlspecialchars($_POST['photo']);
 
-	$sql ="INSERT INTO request (`name_problem`, `text_problem`, `id_category`, `id_photo`) VALUES ('$sname', '$sdescription', '$scategory', '1')"; 
+	$sql ="INSERT INTO problem (`name_problem`, `text_problem`, `id_category`, `id_photo`) VALUES ('$sname', '$sdescription', '$scategory', '1')"; 
 
 	if ($db->query($sql) === TRUE) {
 		echo "<script>alert('Данные отправлены!');</script>";
@@ -60,7 +60,7 @@ if (isset($_POST["doGo"])) {
 								<?php 
 									$result_select = mysqli_query($db,"SELECT * FROM category");
 		          					while($object = mysqli_fetch_object($result_select)){
-		  								echo "<option value='$object->id_problem'> $object->name_problem</option>";
+		  								echo "<option value='$object->id_category'> $object->name_category</option>";
 		  							}
 								?>
 								</select>

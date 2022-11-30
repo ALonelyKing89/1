@@ -93,9 +93,7 @@ require_once 'db.php';
 
 			</div> 
 		</form>
-		<?
-			require_once "template\\footer.php";
-		?>
+		
 		<!-- подключение стилей и BOOTSTRAP -->
 		<link rel="stylesheet" href="style/bootstrap.min.css">
 

@@ -1,7 +1,7 @@
 <?
 // Подключаемся к СЕССИИ
 session_start();
-
+$i=0;
 // Подключаемся к БД
 require_once 'db.php';
 //$prob = $db->query('SELECT * FROM probl');
@@ -20,11 +20,14 @@ include("template\header.php");
 ?>
 
 <?
-
-$sth = $db->prepare("SELECT `status` FROM `problem`");
-
+$dbh = new PDO('mysql:dbname=hakaton2022;host=localhost', 'root', '');
+$sth = $dbh->prepare("SELECT `status` FROM `problem`");
+$sth->execute();
 foreach($sth as $log){
-  echo $log["status"];
+  if($log['status']!="новая") {
+    $i++;
+  }
+  echo 'заявок решено '.$i;
 }
 ?>
 <?

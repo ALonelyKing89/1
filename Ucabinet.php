@@ -52,6 +52,7 @@ foreach($l as $log){
       <img src="https://kartinkof.club/uploads/posts/2022-03/1648241964_6-kartinkof-club-p-billi-kherrington-mem-7.jpg" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8">
+    <input></input>
       <div class="card-body">
         <h5 class="card-title">'.$log["name_request"].'</h5>
         <p class="card-text">'.$log["description_request"].'</p>
@@ -63,6 +64,35 @@ foreach($l as $log){
 </center>';
 }; 
 ?>
+
+<style type="text/css">
+	close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+</style>
 
 <?
 require_once "template\\footer.php";

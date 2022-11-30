@@ -22,14 +22,14 @@ if (isset($_POST["doGo"])) {
             $_SESSION["pass"] = $_POST["pass"];
             $dalsh = 1;
             //переадресуем пользователя
-            header('Location:index.php');
+            header('Location:Ucabinet.php');
         }
         if (($log["login"] == "admin") && ($_POST["pass"] == "admin") ) {
             $_SESSION["login"] = $_POST["login"];
             $_SESSION["pass"] = $_POST["pass"];
             $_SESSION["adm"] = $log['admin'];
             $dalsh = 1;
-            header('Location:admin.php');
+            header('Location:Acabinet.php');
         }
     }
 

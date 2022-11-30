@@ -12,7 +12,7 @@
         <a href="register.php" class="btn btn-outline-info">регистрация</a>
       <?
         };
-        if($_SERVER['REQUEST_URI'] == 'login'){
+        if($_SERVER['REQUEST_URI'] != '/' ){
       ?>          
         <a href="login.php" class="btn btn-info">выход</a>
       <? 

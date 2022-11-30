@@ -39,7 +39,11 @@ if (isset($_GET['del_id'])) { //проверяем, есть ли перемен
   ?>
 
 	<div class="container">
-		<h1 class="text-center py-3">Критерии</h1>
+    <div class="d-flex justify-content-between">
+      <h1>Режим просмотра</h1>
+      <a class="btn btn-primary" href="/edit.php" role="button">Критерии</a>
+    </div>
+		
 		<div class="table-responsive col-sm-12 col-md-9 mx-auto">
 			<?
       $output = $db->query('SELECT * FROM `problem` INNER JOIN category ON problem.id_category = category.id_category WHERE `status` = "новая"');

@@ -35,7 +35,7 @@ if (isset($_GET['del_id'])) { //проверяем, есть ли перемен
 <body>
 	<?
 	//Вывод шапки
-	require_once "template\header.php";
+	require_once "header.php";
 	?>
 
 	<div class="container">
@@ -60,7 +60,7 @@ if (isset($_GET['del_id'])) { //проверяем, есть ли перемен
 
 
 	<?
-	require_once "template\\footer.php";
+	require_once "footer.php";
 
 	?>
 </body>

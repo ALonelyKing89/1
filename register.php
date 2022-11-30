@@ -56,7 +56,7 @@ if (isset($_POST["doGo"])) {
 
 <body>
     <?
-include("template\header.php"); 
+include("header.php"); 
 ?>
     <main class="form-signin w-100 m-auto">
         <form class="container" method="post">
@@ -105,7 +105,7 @@ include("template\header.php");
     </main>
     <?
 
-include("template\\footer.php");
+include("footer.php");
 ?>
 </body>
 

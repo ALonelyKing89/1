@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 01 2022 г., 00:38
+-- Время создания: Дек 01 2022 г., 01:45
 -- Версия сервера: 8.0.24
--- Версия PHP: 7.4.21
+-- Версия PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,8 +48,15 @@ INSERT INTO `category` (`id_category`, `name_category`) VALUES
 
 CREATE TABLE `photo` (
   `id_photo` int NOT NULL,
-  `name_photo` mediumblob NOT NULL
+  `name_photo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Дамп данных таблицы `photo`
+--
+
+INSERT INTO `photo` (`id_photo`, `name_photo`) VALUES
+(1, 'asdfasfh');
 
 -- --------------------------------------------------------
 
@@ -67,6 +74,19 @@ CREATE TABLE `problem` (
   `time` timestamp NULL DEFAULT NULL,
   `id_user` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Дамп данных таблицы `problem`
+--
+
+INSERT INTO `problem` (`id_problem`, `name_problem`, `text_problem`, `id_category`, `id_photo`, `status`, `time`, `id_user`) VALUES
+(2, 'дыры в асфальте', 'нужен ремонт асфальта', 1, 1, 'решена', '2022-11-30 19:30:11', 2),
+(3, 'лужи', 'лужи на улице ленина', 2, 1, 'решена', '2022-11-30 19:30:11', 1),
+(4, 'снег', 'снег падает с крыш', 1, 1, 'решена', '2022-11-30 19:30:11', 2),
+(5, 'деревья', 'после ветра на улице колотушек свалило деревья', 2, 1, 'решена', '2022-11-30 19:30:11', 1),
+(6, 'шум', 'соседи шумят в районе дач', 1, 1, 'новая', '2022-11-30 19:31:42', 1),
+(8, 'продукты', 'дефицит продуктов в магазинах', 1, 1, 'новая', '2022-11-30 19:31:42', 1),
+(10, 'голуби', 'нужно разогнать голубей на улице Пушкина', 2, 1, 'новая', '2022-11-30 20:33:00', 2);
 
 -- --------------------------------------------------------
 
@@ -89,9 +109,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id_user`, `login`, `password`, `name_user`, `email`) VALUES
 (1, 'admin', 'admin', 'admin', 'admin@admin.ru'),
 (2, 'ivan', 'zabi', 'Ivan', 'ivan@ivan.ru'),
-(7, 'abobi', '123', 'Абобович', 'abobi@abobi.ru'),
-(8, 'opo', 'zabo', 'ivan', 'ivan@ivan.ru'),
-(9, 'asdasd', 'asd', 'фывфыв', 'asdas@asdasd.ru');
+(10, 'artur', 'artu', 'artur', 'artur@artur.ru');
 
 --
 -- Индексы сохранённых таблиц
@@ -144,13 +162,13 @@ ALTER TABLE `photo`
 -- AUTO_INCREMENT для таблицы `problem`
 --
 ALTER TABLE `problem`
-  MODIFY `id_problem` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_problem` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

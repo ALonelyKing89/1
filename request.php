@@ -34,7 +34,7 @@ if (isset($_POST["doGo"])) {
 
 
 		<!-- ПОДКЛЮЧЕНИЕ ШАПКИ -->
-      	<? include("template/header.php"); ?>
+      	<? include("header.php"); ?>
 <center><h1>Заявка</h1></center>
 
 
@@ -120,7 +120,7 @@ if (isset($_POST["doGo"])) {
 
 
 <?
-require_once "template\\footer.php";
+require_once "footer.php";
 
 ?>
   </body>

@@ -16,7 +16,7 @@ require_once 'db.php';
 <body>
 <?
 //Вывод шапки
-include("template\header.php"); 
+include("header.php"); 
 ?>
 <?
 $sth = $db->query("SELECT `status` FROM `problem`");
@@ -63,7 +63,7 @@ foreach($l as $log){
 
 
 <?
-include("template\\footer.php");
+include("footer.php");
 
 ?>
 

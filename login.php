@@ -22,6 +22,7 @@ if (isset($_POST["doGo"])) {
             $_SESSION["pass"] = $_POST["pass"];
             $dalsh = 1;
             $_SESSION['adm'] = 0;
+            $_SESSION['idUser']=$log["id_user"];
             $idUser = htmlspecialchars($log["id_user"]);
             //переадресуем пользователя
             header('Location:Ucabinet.php');

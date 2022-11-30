@@ -9,9 +9,17 @@
 
   <nav class="navbar sticky-top badge-light">
     <div class="container">
-      <a class="navbar-brand" href="\">
+      <?
+      if (isset($_SESSION["login"])) {
+        echo '<a class="navbar-brand" href="\">
         <img src="logo.png" alt="" width="40">
-      </a>
+      </a>';
+      } else {
+        echo '<a class="navbar-brand">
+        <img src="logo.png" alt="" width="40">
+      </a>';
+      }
+      ?>
       <form class="d-flex btn-group" role="search">
         <?
         if (isset($_SESSION["login"])) {

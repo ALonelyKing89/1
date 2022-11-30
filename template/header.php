@@ -16,7 +16,7 @@
       <a class="navbar-brand" href="\">
         <img src="logo.png" alt="" width="40">
       </a>
-      <form class="d-flex btn-group m-0" role="search">
+      <form class="d-flex btn-group m-0">
         <?
         if (isset($_SESSION["login"])) {
           if ($_SESSION["adm"] == 1) {

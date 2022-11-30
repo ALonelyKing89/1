@@ -30,12 +30,15 @@ if (isset($_POST["doGo"])) {
         if ($haveUser == 0) {
             // вносим пользователя в базу данных
             $sql = "INSERT INTO users (`login`, `password`,`name_user`,`email`) VALUES ('$login', '$password','$name','$email')";
+            
 
             if ($db->query($sql) === TRUE) {
                 echo "<script>alert('Данные отправлены!');</script>";
             } else {
                 echo "<script>alert('Ошибка отправки данных!');</script>";
             }
+            //переадресуем пользователя
+            header('Location:login.php');
         }
     } else {
         echo "<script>alert('Пароли не совпадают!');</script>";

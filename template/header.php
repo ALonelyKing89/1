@@ -4,11 +4,6 @@
   $url = explode('?', $url);
 
   $url = $url[0];
-
-  if ((!$_SESSION["login"]) && ($url == '/')) {
-    header('Location: login.php');
-  }
-
   ?>
 
   <nav class="navbar sticky-top badge-light">
@@ -26,6 +21,10 @@
           }
           echo '<a href="login.php" class="btn btn-danger m-0">Выход</a>';
         } else {
+          if ($url == '/') {
+            echo '<a href="login.php" class="btn btn-success m-0">Вход</a>';
+            echo '<a href="register.php" class="btn btn btn-info text-white m-0">Регистрация</a>';
+          };
           if ($url == '/register.php') {
             echo '<a href="login.php" class="btn btn-success m-0">Вход</a>';
           };

@@ -39,7 +39,7 @@ if (!isset($_SESSION['login'])){
 		<div class="container-fluid p-0">
 
 		<!-- ПОДКЛЮЧЕНИЕ ШАПКИ -->
-      	<?php include("header.php"); ?>
+      	<? include("template/header.php"); ?>
 
 			<div class="container py-5" id="main">
 				<!-- блок отвечающий за все содержимое за исключением шапки и подвала -->
@@ -107,10 +107,13 @@ if (!isset($_SESSION['login'])){
     </script>
 					<button name="doGo" type="submit" class="btn btn-primary container border-0"><b>ОТПРАВИТЬ</b></button>
 
+					</div>
 				</div>
-			</div>
-		</div> 
-			</form>
+			</div> 
+		</form>
+		<?
+			require_once "template\\footer.php";
+		?>
 		<!-- подключение стилей и BOOTSTRAP -->
 		<link rel="stylesheet" href="style/bootstrap.min.css">
 

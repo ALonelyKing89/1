@@ -11,7 +11,7 @@
 
   ?>
 
-  <nav class="navbar sticky-top badge-light">
+  <nav class="navbar sticky-top badge-light bg-light">
     <div class="container">
       <?
       if (isset($_SESSION["login"])) {

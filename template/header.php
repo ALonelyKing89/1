@@ -21,7 +21,7 @@
       }else{
         if ($url != '/login.php'){
       ?>          
-        <a href="login.php" class="btn btn-info">вход</a>
+        <a href="login.php" class="btn btn-outline-info">вход</a>
         <?  
         }
         if ($url != '/register.php'){

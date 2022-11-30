@@ -19,6 +19,7 @@ require_once 'db.php';
 include("template\header.php"); 
 ?>
 
+<div class="block"></div>
 <?
 $sth = $db->query("SELECT `status` FROM `problem`");
 foreach($sth as $log){
@@ -27,10 +28,12 @@ foreach($sth as $log){
   }  
 }
 echo 'заявок решено '.$i;
-?>
+?>  
+
+
 <?
 include("template\\footer.php");
-
 ?>
+
 </body>
 </html>

@@ -4,22 +4,22 @@ session_start();
 
 
 if ($_SESSION['adm'] != 1) {
-	header('Location:index.php');
+  header('Location:index.php');
 }
 // Подключаемся к БД
 require_once 'db.php';
 //$prob = $db->query('SELECT * FROM probl');
 
 if (isset($_GET['del_id'])) { //проверяем, есть ли переменная
-	//удаляем строку из таблицы
-	$sql = mysqli_query($db, "DELETE FROM `category` WHERE `id_category` = {$_GET['del_id']}");
-	$sql2 = mysqli_query($db, "DELETE FROM `problem` WHERE `id_category` = {$_GET['del_id']}");
+  //удаляем строку из таблицы
+  $sql = mysqli_query($db, "DELETE FROM `category` WHERE `id_category` = {$_GET['del_id']}");
+  $sql2 = mysqli_query($db, "DELETE FROM `problem` WHERE `id_category` = {$_GET['del_id']}");
 
-	if ($sql and $sql2) {
-		echo "<p>Категория и заявки связанные с ней были удалены</p>";
-	} else {
-		echo '<p>Произошла ошибка: ' . mysqli_error($db) . '</p>';
-	}
+  if ($sql and $sql2) {
+    echo "<p>Категория и заявки связанные с ней были удалены</p>";
+  } else {
+    echo '<p>Произошла ошибка: ' . mysqli_error($db) . '</p>';
+  }
 }
 
 ?>
@@ -34,46 +34,46 @@ if (isset($_GET['del_id'])) { //проверяем, есть ли перемен
 
 <body>
 	<?
-	//Вывод шапки
-	require_once "template\header.php";
-	?>
+  //Вывод шапки
+  require_once "template\header.php";
+  ?>
 
 	<div class="container">
 		<h1 class="text-center py-3">Критерии</h1>
 		<div class="table-responsive col-sm-12 col-md-9 mx-auto">
 			<?
-			$output = $db->query('SELECT * FROM `problem` WHERE `status` = "новая"');
-			foreach ($output as $out) {
-				echo '<div class="d-flex justify-content-center">
-				<div class="card mb-3" style="max-width: 540px;">
+      $output = $db->query('SELECT * FROM `problem` INNER JOIN category ON problem.id_category = category.id_category WHERE `status` = "новая"');
+      foreach ($output as $out) {
+        echo '<div class="d-flex justify-content-center">
+          <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
-			<div class="col-md-4">
+              <div class="col-md-4">
                 <img src="https://kartinkof.club/uploads/posts/2022-03/1648241964_6-kartinkof-club-p-billi-kherrington-mem-7.jpg" class="img-fluid rounded-start" alt="...">
-				</div>
-				<div class="col-md-8">
+              </div>
+              <div class="col-md-8">
                 <div class="card-header">
-				' . $out["status"] . '
+                  ' . $out["name_category"] . '
                 </div>
                 <div class="card-body">
-				<h5 class="card-title">' . $out["name_problem"] . '</h5>
-				<p class="card-text"></p>
-				<p class="card-text"><small class="text-muted">' . $out["time"] . '</small></p>    
+                  <h5 class="card-title">' . $out["name_problem"] . '</h5>
+                  <p class="card-text"></p>                  
+                  <p class="card-text"><small class="text-muted">' . $out["time"] . '</small></p>    
                 </div>
-				</div>
+              </div>
             </div>
-			</div>
+          </div>
 </div>';
-			}
-			?>
+      }
+      ?>
 			</tbody>
 		</div>
 	</div>
 
 
 	<?
-	require_once "template\\footer.php";
+  require_once "template\\footer.php";
 
-	?>
+  ?>
 </body>
 
 </html>

@@ -2,13 +2,15 @@
 // Подключаемся к СЕССИИ
 session_start();
 
-// Подключаемся к БД1
+// Подключаемся к БД
 require_once 'db.php';
-$l = $db->query('SELECT * FROM request');
+$l = $db->query('SELECT * FROM request INNER JOIN category ON request.id_category = category.id_category');
+
 //$prob = $db->query('SELECT * FROM probl');
 if (isset($_POST["doCreate"])) {
             header('Location:request.php');
         };
+
 
 ?>
 <!DOCTYPE html>
@@ -67,7 +69,7 @@ $list = $sth->fetchAll(PDO::FETCH_ASSOC);
 <?
 foreach ($l as $log){
                       echo 
-                      "<center>"."<table>"."<thead>"."<tr>"."<th>Название<th>"."<th>Описание<th>"."<th>IDN<th>"."<th>Фото<th>"."</tr>"."</thead>"."<tbody>"."<tr>"."<th>".$log["name_request"]."<th>"."<th>".$log["description_request"]."<th>"."<th>".$log["id_category"]."<th>"."<th>".$log["photo_request"]."<th>"."</tr>"."</tbody>"."</table>"."</center>";
+                      "<center>"."<table>"."<thead>"."<tr>"."<th>Название<th>"."<th>Описание<th>"."<th>IDN<th>"."<th>Фото<th>"."</tr>"."</thead>"."<tbody>"."<tr>"."<th>".$log["name_request"]."<th>"."<th>".$log["description_request"]."<th>"."<th>".$log["name_category"]."<th>"."<th>".$log["photo_request"]."<th>"."</tr>"."</tbody>"."</table>"."</center>";
                   };
 ?>
 

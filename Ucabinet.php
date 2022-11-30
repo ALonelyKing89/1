@@ -42,31 +42,6 @@ require_once "template\header.php";
 	</center>
 </div>
 
-<?
-/* Запрос в БД */
-/* Все варианты сортировки */
-$sort_list = array(
-	'date'       => '`date`',
-	'type'       => '`type`',
-	'food'       => '`food`',
-	'price_asc'  => '`price`',
-	'price_desc' => '`price` DESC',   
-);
- 
-/* Проверка GET-переменной */
-$sort = @$_GET['sort'];
-if (array_key_exists($sort, $sort_list)) {
-	$sort_sql = $sort_list[$sort];
-} else {
-	$sort_sql = reset($sort_list);
-}
- 
-/* Запрос в БД */
-$dbh = new PDO('mysql:dbname=hakaton2022;host=localhost', 'root', '');
-$sth = $dbh->prepare("SELECT * FROM `hakaton2022` ORDER BY {$sort_sql}");
-$sth->execute();
-$list = $sth->fetchAll(PDO::FETCH_ASSOC);
-?>
 
 <?
 foreach($l as $log){

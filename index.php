@@ -39,7 +39,7 @@ foreach($sth as $log){
 <?
 $l = $db->query('SELECT `time`,`name_problem`,`name_category`,`status`,`name_photo` FROM `problem` JOIN `category` ON `problem`.`id_category`=`category`.`id_category` JOIN `photo` ON `problem`.`id_photo`=`photo`.`id_photo` ORDER BY `id_problem` DESC LIMIT 4 ');
 foreach($l as $log){
-  echo '<center>
+  echo '<div class="d-flex justify-content-center">
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4">
@@ -57,7 +57,7 @@ foreach($l as $log){
               </div>
             </div>
           </div>
-</center>';
+</div>';
 }
 ?>
 

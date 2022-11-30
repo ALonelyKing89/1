@@ -39,7 +39,7 @@ if (isset($_GET['del_id'])) { //проверяем, есть ли перемен
 	?>
 
 	<div class="container">
-		<h1 class="text-center py-3">ADMINISTRATOR</h1>
+		<h1 class="text-center py-3">Критерии</h1>
 		<div class="table-responsive col-sm-12 col-md-9 mx-auto">
 			<table class="table table-bordered">
 				<tbody>

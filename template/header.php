@@ -11,26 +11,18 @@
 
   ?>
 
-  <nav class="navbar sticky-top badge-light bg-light">
+  <nav class="navbar sticky-top badge-light">
     <div class="container">
-      <?
-      if (isset($_SESSION["login"])) {
-        echo '<a class="navbar-brand" href="\">
+      <a class="navbar-brand" href="\">
         <img src="logo.png" alt="" width="40">
-      </a>';
-      } else {
-        echo '<a class="navbar-brand">
-        <img src="logo.png" alt="" width="40">
-      </a>';
-      }
-      ?>
+      </a>
       <form class="d-flex btn-group" role="search">
         <?
         if (isset($_SESSION["login"])) {
           if ($_SESSION["adm"] == 1) {
             echo '<a href="Acabinet.php" class="btn btn-info text-white">Админка</a>';
           } else {
-            echo '<a href="Ucabinet.php" class="btn btn-info text-white">Личный кабинет</a>';
+            echo '<a href="Ucabinet.php" class="btn btn-info text-white">Профиль</a>';
           }
           echo '<a href="login.php" class="btn btn-danger">Выход</a>';
         } else {

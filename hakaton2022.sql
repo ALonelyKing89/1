@@ -36,9 +36,11 @@ CREATE TABLE IF NOT EXISTS `photo` (
   `id_photo` int NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_photo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
 -- Дамп данных таблицы hakaton2022.photo: ~0 rows (приблизительно)
+INSERT INTO `photo` (`id_photo`, `name`) VALUES
+	(1, 'asdfasfh');
 
 -- Дамп структуры для таблица hakaton2022.problem
 CREATE TABLE IF NOT EXISTS `problem` (
@@ -48,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `problem` (
   `id_category` int NOT NULL,
   `id_photo` int NOT NULL,
   `status` varchar(15) NOT NULL DEFAULT 'новая',
-  `time` timestamp NOT NULL,
+  `time` timestamp NULL DEFAULT NULL,
   `id_user` int DEFAULT NULL,
   PRIMARY KEY (`id_problem`),
   KEY `FK_problem_photo` (`id_photo`),
@@ -57,9 +59,11 @@ CREATE TABLE IF NOT EXISTS `problem` (
   CONSTRAINT `FK_problem_category` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_problem_photo` FOREIGN KEY (`id_photo`) REFERENCES `photo` (`id_photo`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_problem_users` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
 -- Дамп данных таблицы hakaton2022.problem: ~0 rows (приблизительно)
+INSERT INTO `problem` (`id_problem`, `name`, `text`, `id_category`, `id_photo`, `status`, `time`, `id_user`) VALUES
+	(1, 'asd', 'asd', 2, 1, 'новая', '2022-11-30 13:53:23', 7);
 
 -- Дамп структуры для таблица hakaton2022.request
 CREATE TABLE IF NOT EXISTS `request` (
@@ -71,9 +75,11 @@ CREATE TABLE IF NOT EXISTS `request` (
   PRIMARY KEY (`id_request`),
   KEY `FK_request_photo` (`photo`),
   CONSTRAINT `FK_request_photo` FOREIGN KEY (`photo`) REFERENCES `photo` (`id_photo`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
 -- Дамп данных таблицы hakaton2022.request: ~0 rows (приблизительно)
+INSERT INTO `request` (`id_request`, `name`, `description`, `id_category`, `photo`) VALUES
+	(1, 'asfaf', '0asfasf', 1, 1);
 
 -- Дамп структуры для таблица hakaton2022.users
 CREATE TABLE IF NOT EXISTS `users` (

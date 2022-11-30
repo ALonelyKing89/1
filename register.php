@@ -60,7 +60,7 @@ include("template\header.php");
             <h1 class="h3 my-5 fw-normal text-center">Регистрация</h1>
 
             <div class="form-floating col-3 my-4 mx-auto">
-                <input required type="text" class="form-control" id="floatingInput" placeholder="login" name="name">
+                <input pattern="^[А-Яа-яЁё\s-]+$" required type="text" class="form-control" id="floatingInput" placeholder="login" name="name">
                 <label for="floatingInput">ФИО</label>
             </div>
 

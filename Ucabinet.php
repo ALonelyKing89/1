@@ -92,7 +92,6 @@ foreach($l as $log){
   transform: rotate(-45deg);
 }
 </style>
-
 <?
 require_once "template\\footer.php";
 ?>

@@ -67,16 +67,25 @@ $list = $sth->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <?
-foreach ($l as $log){
-                      echo 
-                      "<center>"."<table>"."<thead>"."<tr>"."<th>Название<th>"."<th>Описание<th>"."<th>IDN<th>"."<th>Фото<th>"."</tr>"."</thead>"."<tbody>"."<tr>"."<th>".$log["name_request"]."<th>"."<th>".$log["description_request"]."<th>"."<th>".$log["name_category"]."<th>"."<th>".$log["photo_request"]."<th>"."</tr>"."</tbody>"."</table>"."</center>";
-                  };
+foreach($l as $log){
+    echo '<center>
+    <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://kartinkof.club/uploads/posts/2022-03/1648241964_6-kartinkof-club-p-billi-kherrington-mem-7.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">'.$log["name_request"].'</h5>
+        <p class="card-text">'.$log["description_request"].'</p>
+        <p class="card-text"><small class="text-muted">'.$log["name_category"].'</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</center>';
+}; 
 ?>
-
-
-
-
-
 
 <?
 require_once "template\\footer.php";

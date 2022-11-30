@@ -24,15 +24,15 @@ if (isset($_POST["doGo"])) {
         }
     }
     if ($haveUser == 0) {
-            // вносим пользователя в базу данных
-            $sql = "INSERT INTO users (`login`, `password`) VALUES ('$login', '$password')";
+        // вносим пользователя в базу данных
+        $sql = "INSERT INTO users (`login`, `password`) VALUES ('$login', '$password')";
 
-            if ($db->query($sql) === TRUE) {
-                echo "<script>alert('Данные отправлены!');</script>";
-            } else {
-                echo "<script>alert('Ошибка отправки данных!');</script>";
-            }
+        if ($db->query($sql) === TRUE) {
+            echo "<script>alert('Данные отправлены!');</script>";
+        } else {
+            echo "<script>alert('Ошибка отправки данных!');</script>";
         }
+    }
 }
 
 ?>
@@ -45,26 +45,55 @@ if (isset($_POST["doGo"])) {
 </head>
 
 <body>
-<?
+    <?
 include("template\header.php"); 
 ?>
     <main class="form-signin w-100 m-auto">
-        <form class="container"  method="post">
+        <form class="container" method="post">
             <h1 class="h3 my-5 fw-normal text-center">Регистрация</h1>
 
             <div class="form-floating col-3 my-4 mx-auto">
                 <input type="text" class="form-control" id="floatingInput" placeholder="login" name="login">
-                <label for="floatingInput">login</label>
-            </div>
-            <div class="form-floating col-3 my-4 mx-auto">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="password" name="pass">
-                <label for="floatingPassword">password</label>
+                <label for="floatingInput">ФИО</label>
             </div>
 
-            <button class="text-center btn btn-lg btn-primary my-4 mx-auto d-flex" name="doGo" type="submit">Зарегистрироваться</button>
+            <div class="form-floating col-3 my-4 mx-auto">
+                <input type="text" class="form-control" id="floatingInput" placeholder="login" name="login">
+                <label for="floatingInput">Логин</label>
+            </div>
+
+            <div class="form-floating col-3 my-4 mx-auto">
+                <input type="email" class="form-control" id="floatingInput" placeholder="login" name="login">
+                <label for="floatingInput">Email</label>
+            </div>
+
+
+            <div class="form-floating col-3 my-4 mx-auto">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="password" name="pass">
+                <label for="floatingPassword">Пароль</label>
+            </div>
+
+            <div class="form-floating col-3 my-4 mx-auto">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="password" name="pass">
+                <label for="floatingPassword">Повтор пароля</label>
+            </div>
+
+            <div class="form-check col-3 my-4 mx-auto">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Примите условия и соглашения
+                </label>
+                <div class="invalid-feedback">
+                    Вы должны принять перед отправкой.
+                </div>
+            </div>
+
+
+            <button class="text-center btn btn-lg btn-primary my-4 mx-auto d-flex" name="doGo"
+                type="submit">Зарегистрироваться</button>
         </form>
     </main>
-<?
+    <?
 
 include("template\\footer.php");
 ?>

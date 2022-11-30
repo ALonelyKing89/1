@@ -1,18 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<body>
-
   <nav class="navbar sticky-top badge-light">
     <div class="container-fluid">
-      <a class="navbar-brand">Navbar</a>
+      <a class="navbar-brand" href="\">
+        <img src="logo.png" alt="" width="40" >
+        гниды
+      </a>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <?
+        if($_SERVER['REQUEST_URI'] == '/'){
+      ?>          
+        <a href="login.php" class="btn btn-info">вход</a>
+        <a href="register.php" class="btn btn-outline-info">регистрация</a>
+      <?
+        };
+        if($_SERVER['REQUEST_URI'] == 'login'){
+      ?>          
+        <a href="login.php" class="btn btn-info">выход</a>
+      <? 
+        };
+      ?>
       </form>
     </div>
   </nav>

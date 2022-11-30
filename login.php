@@ -50,7 +50,9 @@ if (isset($_POST["doGo"])) {
 </head>
 
 <body>
-
+<?
+require_once "template\header.php"; 
+?>
     <main class="form-signin w-100 m-auto">
         <form class="container" method="post">
             <img class="mx-auto my-4 d-flex col-1" src="logo.png">
@@ -68,7 +70,10 @@ if (isset($_POST["doGo"])) {
             <button class="text-center btn btn-lg btn-primary my-4 mx-auto d-flex" name="doGo" type="submit">Войти</button>
         </form>
     </main>
+<?
 
+require_once "template\\footer.php";
+?>
 </body>
 
 </html>

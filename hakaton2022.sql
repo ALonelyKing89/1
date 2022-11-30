@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
 -- Дамп данных таблицы hakaton2022.category: ~2 rows (приблизительно)
+DELETE FROM `category`;
 INSERT INTO `category` (`id_category`, `name`) VALUES
 	(1, 'Problem 1'),
 	(2, 'Problem 2');
@@ -38,7 +39,8 @@ CREATE TABLE IF NOT EXISTS `photo` (
   PRIMARY KEY (`id_photo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
--- Дамп данных таблицы hakaton2022.photo: ~0 rows (приблизительно)
+-- Дамп данных таблицы hakaton2022.photo: ~1 rows (приблизительно)
+DELETE FROM `photo`;
 INSERT INTO `photo` (`id_photo`, `name`) VALUES
 	(1, 'asdfasfh');
 
@@ -61,7 +63,8 @@ CREATE TABLE IF NOT EXISTS `problem` (
   CONSTRAINT `FK_problem_users` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
--- Дамп данных таблицы hakaton2022.problem: ~0 rows (приблизительно)
+-- Дамп данных таблицы hakaton2022.problem: ~1 rows (приблизительно)
+DELETE FROM `problem`;
 INSERT INTO `problem` (`id_problem`, `name`, `text`, `id_category`, `id_photo`, `status`, `time`, `id_user`) VALUES
 	(1, 'asd', 'asd', 2, 1, 'новая', '2022-11-30 13:53:23', 7);
 
@@ -77,7 +80,8 @@ CREATE TABLE IF NOT EXISTS `request` (
   CONSTRAINT `FK_request_photo` FOREIGN KEY (`photo`) REFERENCES `photo` (`id_photo`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
--- Дамп данных таблицы hakaton2022.request: ~0 rows (приблизительно)
+-- Дамп данных таблицы hakaton2022.request: ~1 rows (приблизительно)
+DELETE FROM `request`;
 INSERT INTO `request` (`id_request`, `name`, `description`, `id_category`, `photo`) VALUES
 	(1, 'asfaf', '0asfasf', 1, 1);
 
@@ -91,6 +95,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 
 -- Дамп данных таблицы hakaton2022.users: ~3 rows (приблизительно)
+DELETE FROM `users`;
 INSERT INTO `users` (`id_user`, `login`, `password`, `name`) VALUES
 	(1, 'admin', 'admin', 'admin'),
 	(2, 'ivan', 'zabi', 'Ivan'),

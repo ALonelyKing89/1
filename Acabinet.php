@@ -41,7 +41,7 @@ if (isset($_GET['del_id'])) { //проверяем, есть ли перемен
   <div class="container">
     <div class="d-flex justify-content-between px-5 my-4">
       <h1>Режим просмотра</h1>
-      <a class="btn btn-primary col-sm-4 text-center" href="/edit.php" role="button">Критерии</a>
+      <a class="btn btn-primary col-sm-4 my-auto" href="/edit.php" role="button">Критерии</a>
     </div>
 
     <div class="table-responsive col-sm-12 col-md-9 mx-auto">
@@ -64,7 +64,7 @@ if (isset($_GET['del_id'])) { //проверяем, есть ли перемен
                   <p class="card-text"></p>                
                   <p class="card-text"><small class="text-muted">' . $out["time"] . '</small></p>  
                 </div>
-                  <select class="form-select btn btn-outline-primary rounded-0" name="'.$out["id_problem"].'">
+                  <select class="form-select rounded-0" name="'.$out["id_problem"].'">
                     <option value="0" disabled selected>Принять или отклонить</option>
                     <option value="1">Решена</option>
                     <option value="2">Отклонена</option>
@@ -75,11 +75,11 @@ if (isset($_GET['del_id'])) { //проверяем, есть ли перемен
           </div>
 </div>';
       }
-      foreach ($output as $out) {
-        if (isset($_POST[$out["id_problem"]])) {
-          mysqli_query($db, "DELETE FROM `problem` WHERE `id_category` = {$out["id_problem"]}");
-        }
-      }
+      // foreach ($output as $out) {
+      //   if (isset($_POST[$out["id_problem"]])) {
+      //     mysqli_query($db, "DELETE FROM `problem` WHERE `id_category` = {$out["id_problem"]}");
+      //   }
+      // }
       ?>
       </tbody>
     </div>

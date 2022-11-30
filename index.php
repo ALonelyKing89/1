@@ -37,6 +37,14 @@ foreach($sth as $log){
   </center>
 </div>
 <?
+$l = $db->query('SELECT `time`,`name_problem`,`name_category`,`status`,`name_photo` FROM `problem` JOIN `category` ON `problem`.`id_category`=`category`.`id_category` JOIN `photo` ON `problem`.`id_photo`=`photo`.`id_photo`');
+foreach($l as $log){
+
+}
+?>
+
+
+<?
 include("template\\footer.php");
 
 ?>

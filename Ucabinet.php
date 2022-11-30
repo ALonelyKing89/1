@@ -52,7 +52,6 @@ foreach($l as $log){
       <img src="https://kartinkof.club/uploads/posts/2022-03/1648241964_6-kartinkof-club-p-billi-kherrington-mem-7.jpg" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8">
-    <input></input>
       <div class="card-body">
         <h5 class="card-title">'.$log["name_request"].'</h5>
         <p class="card-text">'.$log["description_request"].'</p>

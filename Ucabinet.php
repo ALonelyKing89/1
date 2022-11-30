@@ -4,7 +4,7 @@ session_start();
 
 // Подключаемся к БД
 require_once 'db.php';
-$l = $db->query('SELECT * FROM problem INNER JOIN category ON problem.id_category = category.id_category');
+$l = $db->query('SELECT * FROM problem INNER JOIN category ON problem.id_category = category.id_category WHERE id_user = '.$_SESSION['idUser'].'');
 if (!isset($_SESSION['login']) ) {
 	header('Location:index.php'); 
 }

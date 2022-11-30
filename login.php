@@ -51,7 +51,7 @@ if (isset($_POST["doGo"])) {
 
 <body>
 <?
-require_once "template\header.php"; 
+include("template\header.php"); 
 ?>
     <main class="form-signin w-100 m-auto">
         <form class="container" method="post">
@@ -71,7 +71,7 @@ require_once "template\header.php";
     </main>
 <?
 
-require_once "template\\footer.php";
+include("template\\footer.php");
 ?>
 </body>
 

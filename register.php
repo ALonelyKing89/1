@@ -45,7 +45,9 @@ if (isset($_POST["doGo"])) {
 </head>
 
 <body>
-
+<?
+include("template\header.php"); 
+?>
     <main class="form-signin w-100 m-auto">
         <form class="container"  method="post">
             <h1 class="h3 my-5 fw-normal text-center">Регистрация</h1>
@@ -62,7 +64,10 @@ if (isset($_POST["doGo"])) {
             <button class="text-center btn btn-lg btn-primary my-4 mx-auto d-flex" name="doGo" type="submit">Зарегистрироваться</button>
         </form>
     </main>
+<?
 
+include("template\\footer.php");
+?>
 </body>
 
 </html>

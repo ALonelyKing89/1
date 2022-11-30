@@ -13,25 +13,32 @@ session_unset();
 //----------РАБОТА С ФОРМОЙ
 // Проверяем нажата ли кнопка отправки формы
 if (isset($_POST["doGo"])) {
+    $repass = htmlspecialchars($_POST['repass']);
     $haveUser = 0;
     $login = htmlspecialchars($_POST['login']);
     $password = htmlspecialchars($_POST['pass']);
-    foreach ($l as $log) {
-        if (($log["login"] == $login)) {
-            echo "<script>alert('Такой пользователь уже зарегистрирован!');</script>";
-            $haveUser = 1;
-            break;
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    if ($repass == $password) {
+        foreach ($l as $log) {
+            if (($log["login"] == $login)) {
+                echo "<script>alert('Такой пользователь уже зарегистрирован!');</script>";
+                $haveUser = 1;
+                break;
+            }
         }
-    }
-    if ($haveUser == 0) {
-        // вносим пользователя в базу данных
-        $sql = "INSERT INTO users (`login`, `password`) VALUES ('$login', '$password')";
+        if ($haveUser == 0) {
+            // вносим пользователя в базу данных
+            $sql = "INSERT INTO users (`login`, `password`,`name_user`,`email`) VALUES ('$login', '$password','$name','$email')";
 
-        if ($db->query($sql) === TRUE) {
-            echo "<script>alert('Данные отправлены!');</script>";
-        } else {
-            echo "<script>alert('Ошибка отправки данных!');</script>";
+            if ($db->query($sql) === TRUE) {
+                echo "<script>alert('Данные отправлены!');</script>";
+            } else {
+                echo "<script>alert('Ошибка отправки данных!');</script>";
+            }
         }
+    } else {
+        echo "<script>alert('Пароли не совпадают!');</script>";
     }
 }
 
@@ -53,28 +60,28 @@ include("template\header.php");
             <h1 class="h3 my-5 fw-normal text-center">Регистрация</h1>
 
             <div class="form-floating col-3 my-4 mx-auto">
-                <input type="text" class="form-control" id="floatingInput" placeholder="login" name="login">
+                <input required type="text" class="form-control" id="floatingInput" placeholder="login" name="name">
                 <label for="floatingInput">ФИО</label>
             </div>
 
             <div class="form-floating col-3 my-4 mx-auto">
-                <input type="text" class="form-control" id="floatingInput" placeholder="login" name="login">
+                <input required type="text" class="form-control" id="floatingInput" placeholder="login" name="login">
                 <label for="floatingInput">Логин</label>
             </div>
 
             <div class="form-floating col-3 my-4 mx-auto">
-                <input type="email" class="form-control" id="floatingInput" placeholder="login" name="login">
+                <input required type="email" class="form-control" id="floatingInput" placeholder="login" name="email">
                 <label for="floatingInput">Email</label>
             </div>
 
 
             <div class="form-floating col-3 my-4 mx-auto">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="password" name="pass">
+                <input required type="password" class="form-control" id="floatingPassword" placeholder="password" name="pass">
                 <label for="floatingPassword">Пароль</label>
             </div>
 
             <div class="form-floating col-3 my-4 mx-auto">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="password" name="pass">
+                <input required type="password" class="form-control" id="floatingPassword" placeholder="password" name="repass">
                 <label for="floatingPassword">Повтор пароля</label>
             </div>
 

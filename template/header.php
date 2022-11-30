@@ -5,6 +5,10 @@
 
   $url = $url[0];
 
+  if ((!$_SESSION["login"]) && ($url == '/')) {
+    header('Location: login.php');
+  }
+
   ?>
 
   <nav class="navbar sticky-top badge-light">

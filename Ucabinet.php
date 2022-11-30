@@ -6,6 +6,10 @@ session_start();
 require_once 'db.php';
 $l = $db->query('SELECT * FROM request');
 //$prob = $db->query('SELECT * FROM probl');
+if (isset($_POST["doCreate"])) {
+            header('Location:request.php');
+        };
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +24,19 @@ $l = $db->query('SELECT * FROM request');
 require_once "template\header.php"; 
 ?>
 
-<center><h1>USER</h1></center>
+<div class="container">
+	<center>
+		<h1>Личный кабинет пользователя</h1>
+	</center>
+	<form method="post">
+	<center>
+		<button name="doCreate" class="btn btn-secondary mt-5 col-2" type="submit">Создать заявку</button>
+	</center>	
+	</form>
+		<center>
+		<h3 class="mt-4">Ваши заявки</h1>
+	</center>
+</div>
 
 <?
 /* Запрос в БД */
